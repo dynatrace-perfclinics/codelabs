@@ -1,8 +1,6 @@
-# codelabs
-=======
 # Dynatrace Performance Clinics codelabs
 
-A site for hosting Dynatrace  codelabs.
+A site for hosting Dynatrace Performance Clinics codelabs.
 Adapted from [google code labs](https://github.com/googlecodelabs/tools/tree/master/site)
 
 ## Create a tutorial
