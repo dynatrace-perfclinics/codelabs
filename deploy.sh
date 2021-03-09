@@ -9,11 +9,6 @@ REPO_DIR=../dynatrace-perfclinics.github.io
 echo "Compile codelabs"
 npm run build
 
-# gulp dist is creating a symbolic link to codelabs, but since we are shipping only the dist directory we need
-# to copy the codelabs inside the dist directory
-#rm -rf dist/codelabs
-#cp -r codelabs dist/
-
 echo "Copy distribution to publish directory" 
 cp -r dist/* $REPO_DIR
 
@@ -25,6 +20,6 @@ git add .
 echo "Commit changes" 
 git commit -m $COMMIT_MSG
 echo "Push changes" 
-git push origin master
+git push origin main
 echo "Comeback"
 cd -
