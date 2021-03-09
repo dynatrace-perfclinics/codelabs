@@ -1,0 +1,14 @@
+{
+  "title": "Dynatrace Sales Engineering Onboarding",
+  "description": "Dynatrace Sales Engineering Onboarding Codelabs.",
+  "tags": ["onboarding"],
+  "categories": [],
+  "exclude": [
+    "^lang-.*"
+  ],
+  "logoUrl": "/images//icons/dynatrace-gray_900.svg",
+  "toolbarBgColor": "#37474F",
+  "sort": "",
+  "pins": []
+}
+

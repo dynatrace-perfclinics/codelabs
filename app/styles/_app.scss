@@ -1,0 +1,294 @@
+/**
+ * Copyright 2015 Google Inc. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import "_variables";
+@import "_material";
+
+html{
+  font-family: 'bernina_sans', Open Sans, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  outline: none;
+}
+
+body {
+  background: $backgroundColor;
+  background-image: url(https://university.dynatrace.com/images/dtu_content_background.svg);
+  background-position: top;
+  background-size: cover;
+
+  &.view {
+    #banner {
+      padding-top: calc(6px + 24px); // "codelabs" topbar height
+      padding-bottom: $keyline * 3;
+      position: relative; // ensures bar renders below top toolbar on page load.
+    }
+  }
+
+  #loading-placeholder {
+    display: none;
+    padding: 40px 0;
+    text-align: center;
+  }
+
+  &.loading {
+    card-sorter#cards {
+      display: none;
+    }
+
+    div#filters,
+    div#searchbar {
+      display: none;
+    }
+
+    div#loading-placeholder {
+      display: block;
+    }
+  }
+}
+
+b {
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+  color: currentcolor;
+}
+
+ul, li {
+  list-style: none;
+  padding: 0
+}
+
+.site-width {
+  margin: 0 auto;
+  width: 90vw;
+  max-width: 1024px;
+}
+
+#banner {
+  color: #fff;
+  background-image: url($banner-itguymainframe);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  @include keyline-40();
+  padding: 30px 0 20px 0;
+  border-bottom: 3px solid #23282d;
+  //box-shadow: 0px 1px 4px -1px $blueGrey500;
+  box-shadow: inset 0 0 0 100vmax rgba(40, 172, 33, 0.4);
+
+  &[down] {
+    .banner-slider {
+      transform: none;
+    }
+    .banner-title {
+      visibility: hidden; // Just hide but keep layout.
+    }
+  }
+
+  h2, h3 {
+    font-weight: 100;
+    text-shadow: 1px 1px black;
+  }
+
+  #logo {
+    height: 125px;
+    width: auto;
+    max-width: 100%;
+  }
+
+  .banner-slider {
+    position: absolute;
+    top: 0;
+    max-width: 100%;
+    width: 100%;
+    background-color: $backgroundColor;
+    background-image: url(https://university.dynatrace.com/images/dtu_content_background.svg);
+    color: $blueGrey600;
+    padding: $keyline 0;
+    transform: translateY(-100%);
+    transition: transform 400ms cubic-bezier(0,0,0.2,1);
+    will-change: transform;
+
+    h3 {
+      font-size: 30px;
+    }
+  }
+
+  .banner_arrows {
+    margin-left: $keyline * 2;
+  }
+
+  .banner-title {
+    margin-bottom: $keyline;
+  }
+
+  .banner-description {
+    .banner-meta {
+      @include keyline-32();
+
+      h3 {
+        margin-bottom: $keyline;
+      }
+    }
+  }
+
+  paper-button {
+    @include md-font-button();
+    font-family: 'bernina_sans', Open Sans, sans-serif;
+    background-color: $blueGrey500;
+    padding: $keyline $keyline * 2;
+    min-width: 150px;
+    color: #fff;
+    text-align: center;
+    line-height: initial;
+
+    &.iron-selected {
+      background-color: $blueGrey700;
+    }
+  }
+}
+
+#sortby {
+  padding: $keyline * 3 0;
+  justify-content: center;
+
+  paper-tabs {
+    text-transform: uppercase;
+    color: #fff;
+
+    paper-tab {
+      padding: 0 5px;
+      margin: auto 7px;
+    }
+
+  }
+}
+
+.paper-tabs-0 #selectionBar.paper-tabs {
+border-bottom: 1px solid transparent;
+background:linear-gradient(90deg,#2583ee,#712f90);
+padding:1px;
+}
+
+.paper-button-0,
+.paper-menu-button-0 {
+  border-radius: $radius!important;
+}
+
+.dropdown-filter {
+  background-color: #fff;
+  border-radius: $radius;
+}
+
+.dropdown-content {
+  border-radius: $radius !important;
+  text-transform: capitalize;
+
+  paper-item:hover {
+    background: #2c3035;
+    color: #267cdd;
+    cursor: pointer;
+  }
+}
+
+.paper-input-container-1{
+  background:none;
+  color: #8f96a0;
+}
+
+#dropdown.style-scope.paper-menu-button{
+  margin-top:40px;
+}
+
+@media (max-width: $phone-breakpoint-max) {
+  #banner {
+    padding: $keyline * 2 0;
+    line-height: 16px;
+
+    paper-button {
+      display: inline-block;
+      margin: $keyline * 2 0 0 0;
+    }
+  }
+
+  #filters {
+    padding: 0;
+    margin: 0;
+    height: 20px;
+    visibility: hidden;
+  }
+
+  .banner-info {
+    line-height: 24px;
+    align-self: flex-start;
+    width: 100%;
+  }
+  .banner-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .banner-technologies {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: 1;
+  }
+  .banner-title {
+    font-size: 7vw;
+  }
+  .banner-meta {
+    display: none;
+  }
+  #logo {
+    margin-bottom: $keyline * 2;
+  }
+
+  .filters {
+    width: 100%;
+  }
+}
+
+@media (min-width: $tablet-breakpoint-min) {
+  #banner {
+    paper-button {
+      margin-bottom: $keyline * 2;
+    }
+    .banner-title {
+      margin-bottom: $keyline * 2;
+    }
+  }
+
+  .banner-info {
+    margin-right: $keyline * 4;
+    line-height: $keyline * 4;
+  }
+  .banner-info a {
+    text-decoration: underline;
+  }
+  .banner-description {
+    display: flex;
+    .banner-info {
+      flex: 1;
+    }
+  }
+}

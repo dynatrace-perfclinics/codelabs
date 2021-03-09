@@ -1,0 +1,13 @@
+{
+  "title": "Dynatrace Perfomance Clinics Codelabs",
+  "description": "The Perfomance Clinics CodeLabs provide a guided, tutorial-based hands-on learning experience. These labs will provide sessions that are presented by the Live Performance Clincis but are also feasible for self-learning. Please reach out to perfclinics@dynatrace.com if you have other questions.",
+  "tags": [],
+  "categories": [],
+  "exclude": [
+    "^lang-.*"
+  ],
+  "logoUrl": "/images/logo.png",
+  "toolbarBgColor": "#1e6022",
+  "sort": "mainCategory",
+  "pins": []
+}
