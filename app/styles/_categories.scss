@@ -1,0 +1,87 @@
+/**
+ * Copyright 2015 Google Inc. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+// Dynatrace colors
+$color-dynatrace-orange: #ef651f;
+$color-dynatrace-blue: #14a8f5;
+$color-dynatrace-logo-purple: #6f2da8;
+$color-dynatrace-logo-green: #73be28;
+
+/* Other colors */
+$color-kubernetes-blue: #326ce5;
+
+/* Mixins */
+
+@mixin codelab-card($categories, $color, $icon) {
+  %bg-#{$color} {
+    background-color: $color;
+  }
+
+  %border-#{$color} {
+    border-bottom-color: $color;
+  }
+
+  %icon-#{$icon} {
+    background-image: url('/images/icons/#{$icon}');
+  }
+
+  @each $category in $categories {
+    .codelab-card.category-#{$category} {
+      @extend %border-#{$color};
+    }
+
+    .card-footer {
+      paper-button.#{$category}-bg {
+        @extend %bg-#{$color};
+      }
+
+      .category-icon.#{$category}-icon {
+        @extend %icon-#{$icon};
+      }
+    }
+  }
+}
+
+/* Actual CSS classes */
+
+@include codelab-card(['cloud'], $color-dynatrace-blue, 'cloud-royalblue_500.svg');
+@include codelab-card(['kubernetes'], $color-dynatrace-blue, 'kubernetes.svg');
+
+
+@include codelab-card(['autonomous-cloud'], #455a64, 'keptn.png');
+
+@include codelab-card(['kubernetes'], #455a64, 'kubernetes.png');
+
+@include codelab-card(['kubernetes-gke'], #455a64, 'cloud-platform.svg');
+
+@include codelab-card(['bizops'], #455a64, 'bizops.svg');
+
+@include codelab-card(['adv-obs'], #455a64, 'adv-obs.svg');
+
+@include codelab-card(['dem'], #455a64, 'dem.svg');
+
+@include codelab-card(['azure'], #455a64, 'azure.svg');
+
+@include codelab-card(['istio'], #455a64, 'istio.svg');
+
+@include codelab-card(['infra'], #455a64, 'metric-tree.svg');
+
+@include codelab-card(['automate-feedback'], #455a64, 'perf-scale.svg');
+
+@include codelab-card(['automate-delivery'], #455a64, 'traffic-light.svg');
+
+@include codelab-card(['automate-operations'], #455a64, 'health-status.svg');
+

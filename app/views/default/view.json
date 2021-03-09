@@ -1,0 +1,13 @@
+{
+  "title": "Dynatrace Sales Engineering Codelabs",
+  "description": "The Dynatrace Sales Engineering CodeLabs provide a guided, tutorial-based hands-on learning experience. These labs will provide sessions that are presented by the Dynatrace Sales Engineering team during Technical Workshops but are also feasible for self-learning. Please reach out to sales-engineering@dynatrace.com if you have other questions.",
+  "tags": [],
+  "categories": [],
+  "exclude": [
+    "^lang-.*"
+  ],
+  "logoUrl": "/images/logo.png",
+  "toolbarBgColor": "#37474F",
+  "sort": "mainCategory",
+  "pins": []
+}
