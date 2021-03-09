@@ -84,13 +84,16 @@ ul, li {
 }
 
 #banner {
-  //background-image: url(https://university.dynatrace.com/images/dtu_content_background.svg);
   color: #fff;
-  background-color: #273039;
+  background-image: url($banner-itguymainframe);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
   @include keyline-40();
   padding: 30px 0 20px 0;
-  //border-bottom: 3px solid #23282d;
-  box-shadow: 0px 1px 4px -1px $blueGrey500;
+  border-bottom: 3px solid #23282d;
+  //box-shadow: 0px 1px 4px -1px $blueGrey500;
+  box-shadow: inset 0 0 0 100vmax rgba(40, 172, 33, 0.4);
 
   &[down] {
     .banner-slider {
@@ -102,7 +105,8 @@ ul, li {
   }
 
   h2, h3 {
-    font-weight: 300;
+    font-weight: 100;
+    text-shadow: 1px 1px black;
   }
 
   #logo {
