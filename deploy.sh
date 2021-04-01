@@ -18,7 +18,7 @@ cd $REPO_DIR
 echo "Add changes" 
 git add .
 echo "Commit changes" 
-git commit -m $COMMIT_MSG
+git commit -m "${COMMIT_MSG}"
 echo "Push changes" 
 git push origin main
 echo "Comeback"

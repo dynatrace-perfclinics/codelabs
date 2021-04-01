@@ -63,6 +63,8 @@ $color-kubernetes-blue: #326ce5;
 
 @include codelab-card(['autonomous-cloud'], #455a64, 'keptn.png');
 
+@include codelab-card(['easytravel'], $color-dynatrace-orange, 'favicon_easytravel.ico');
+
 @include codelab-card(['kubernetes'], #455a64, 'kubernetes.png');
 
 @include codelab-card(['kubernetes-gke'], #455a64, 'cloud-platform.svg');
