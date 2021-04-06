@@ -17,7 +17,7 @@
 @import "_variables";
 @import "_material";
 
-html{
+html {
   font-family: 'bernina_sans', Open Sans, sans-serif;
 }
 
@@ -72,7 +72,34 @@ a {
   color: currentcolor;
 }
 
-ul, li {
+a.button {
+  text-decoration: none;
+  background-color: transparent;
+  background-image: linear-gradient(120deg, hsla(0, 0%, 100%, .4), hsla(0, 0%, 100%, .2) 50%);
+  background-position: 99%;
+  background-size: 200% 100%;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1;
+  margin: 2rem .3rem 1rem;
+  padding: 12px 27px;
+  text-decoration: none;
+  transition: background-position .1s ease-out;
+  vertical-align: middle;
+  white-space: nowrap;
+  transition-duration: 0.4s;
+}
+
+a.button:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+ul,
+li {
   list-style: none;
   padding: 0
 }
@@ -99,12 +126,14 @@ ul, li {
     .banner-slider {
       transform: none;
     }
+
     .banner-title {
       visibility: hidden; // Just hide but keep layout.
     }
   }
 
-  h2, h3 {
+  h2,
+  h3 {
     font-weight: 100;
     text-shadow: 1px 1px black;
   }
@@ -125,7 +154,7 @@ ul, li {
     color: $blueGrey600;
     padding: $keyline 0;
     transform: translateY(-100%);
-    transition: transform 400ms cubic-bezier(0,0,0.2,1);
+    transition: transform 400ms cubic-bezier(0, 0, 0.2, 1);
     will-change: transform;
 
     h3 {
@@ -184,14 +213,14 @@ ul, li {
 }
 
 .paper-tabs-0 #selectionBar.paper-tabs {
-border-bottom: 1px solid transparent;
-background:linear-gradient(90deg,#2583ee,#712f90);
-padding:1px;
+  border-bottom: 1px solid transparent;
+  background: linear-gradient(90deg, #2583ee, #712f90);
+  padding: 1px;
 }
 
 .paper-button-0,
 .paper-menu-button-0 {
-  border-radius: $radius!important;
+  border-radius: $radius !important;
 }
 
 .dropdown-filter {
@@ -210,13 +239,13 @@ padding:1px;
   }
 }
 
-.paper-input-container-1{
-  background:none;
+.paper-input-container-1 {
+  background: none;
   color: #8f96a0;
 }
 
-#dropdown.style-scope.paper-menu-button{
-  margin-top:40px;
+#dropdown.style-scope.paper-menu-button {
+  margin-top: 40px;
 }
 
 @media (max-width: $phone-breakpoint-max) {
@@ -242,23 +271,28 @@ padding:1px;
     align-self: flex-start;
     width: 100%;
   }
+
   .banner-description {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+
   .banner-technologies {
     position: absolute;
     width: 100%;
     left: 0;
     z-index: 1;
   }
+
   .banner-title {
     font-size: 7vw;
   }
+
   .banner-meta {
     display: none;
   }
+
   #logo {
     margin-bottom: $keyline * 2;
   }
@@ -273,6 +307,7 @@ padding:1px;
     paper-button {
       margin-bottom: $keyline * 2;
     }
+
     .banner-title {
       margin-bottom: $keyline * 2;
     }
@@ -282,11 +317,14 @@ padding:1px;
     margin-right: $keyline * 4;
     line-height: $keyline * 4;
   }
-  .banner-info a {
-    text-decoration: underline;
-  }
+
+  //.banner-info a {
+    //text-decoration: underline;
+ // }
+
   .banner-description {
     display: flex;
+
     .banner-info {
       flex: 1;
     }
